@@ -1,0 +1,58 @@
+/* main.css */
+
+/* Background and layout styling */
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Arial', sans-serif;
+}
+
+
+
+
+.form-contact {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.form-control {
+  padding: 15px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #2575fc;
+}
+
+/* Styling for form icons */
+.form-control.position-relative {
+  padding-left: 40px; /* To give space for icons */
+}
+
+i {
+  color: #2575fc;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #1d64d3;
+  transition: 0.3s;
+}
+
+/* Social media icons */
+.social-media a {
+  color: #2575fc;
+}
+
+.social-media a:hover {
+  color: #1d64d3;
+  transition: color 0.3s;
+}

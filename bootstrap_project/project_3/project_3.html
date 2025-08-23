@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Kontak</title>
+  <link href="scss/main.scss" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link href="bootstrapv5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</head>
+<body>
+    <br><br><br><br><br>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="form-contact">
+          <h2 class="text-center mb-4">Hubungi Kami</h2>
+          <form id="contactForm">
+            <div class="mb-3 position-relative">
+              <label for="name" class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-control rounded-pill" id="name" placeholder="Masukkan Nama Anda" required>
+              <div class="invalid-feedback">Nama tidak boleh kosong.</div>
+            </div>
+            <div class="mb-3 position-relative">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control rounded-pill" id="email" placeholder="Masukkan Email Anda" required>
+              <div class="invalid-feedback">Email tidak valid.</div>
+            </div>
+            <div class="mb-3 position-relative">
+              <label for="message" class="form-label">Pesan</label>
+              <textarea class="form-control rounded-3" id="message" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+              <div class="invalid-feedback">Pesan tidak boleh kosong.</div>
+            </div>
+
+            <!-- Tombol Kirim untuk membuka Modal -->
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary w-50 rounded-pill py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Kirim
+              </button>
+            </div>
+          </form>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Terima Kasih!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-media text-center mt-4">
+            <a href="#" class="me-3"><i class="fab fa-facebook fs-3"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-twitter fs-3"></i></a>
+            <a href="#"><i class="fab fa-instagram fs-3"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrapv5/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    
+    // Validasi form saat disubmit
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Menghentikan submit agar kita bisa memvalidasi terlebih dahulu
+      
+      // Validasi Nama
+      const nameInput = document.getElementById('name');
+      if (nameInput.value.trim() === '') {
+        nameInput.classList.add('is-invalid');
+      } else {
+        nameInput.classList.remove('is-invalid');
+        nameInput.classList.add('is-valid');
+      }
+
+      // Validasi Email
+      const emailInput = document.getElementById('email');
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailInput.classList.add('is-invalid');
+      } else {
+        emailInput.classList.remove('is-invalid');
+        emailInput.classList.add('is-valid');
+      }
+
+      // Validasi Pesan
+      const messageInput = document.getElementById('message');
+      if (messageInput.value.trim() === '') {
+        messageInput.classList.add('is-invalid');
+      } else {
+        messageInput.classList.remove('is-invalid');
+        messageInput.classList.add('is-valid');
+      }
+    });
+  </script>
+</body>
+</html>

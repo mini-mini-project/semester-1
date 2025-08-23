@@ -1,0 +1,239 @@
+/* ================= VERTICAL GALLERY ================= */
+.gallery-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  margin: 32px 0;
+}
+.gallery-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+.gallery-row figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.5);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 16px 8px 0 8px;
+  margin: 0;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.gallery-row figure:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+.gallery-row img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1);
+  display: block;
+}
+.gallery-row img:hover {
+  transform: scale(1.08);
+  z-index: 1;
+}
+.caption-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(229, 196, 12, 0.92);
+  color: #050505;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Titillium Web", sans-serif;
+  padding: 12px 18px;
+  margin-top: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  min-width: 0;
+  width: 90%;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+/* Mengatur tampilan header dan judul utama */
+header {
+  text-align: center;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(120deg, rgba(51, 60, 61, 0.85) 0%, rgba(86, 77, 87, 0.85) 100%);
+  margin: 24px 0 32px 0;
+  padding: 48px 0 32px 0;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border: 2px solid rgba(229, 196, 12, 0.25);
+  position: relative;
+}
+header img.profil-image {
+  margin-bottom: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  border: 4px solid rgba(229, 196, 12, 0.18);
+}
+header h1 {
+  font-size: 2.5rem;
+  color: #e5c40c;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+header p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+/* ================= ABOUT ME ================= */
+/* Mengatur tampilan section tentang saya */
+.am {
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top : 5px;
+  margin-bottom: 5px;
+  background-color: #645fa8;
+  padding: 350px;
+  border-radius: 50px;
+}
+
+/* ================= CONTACT FORM ================= */
+/* Mengatur tampilan dan tata letak form kontak */
+.contact {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 100px 50px;
+  background: #b4b6c6;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  text-align: left;
+  font-family: "Lobster", sans-serif;
+}
+.contact h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: "Lobster", sans-serif;
+}
+.contact label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Lobster", sans-serif;
+}
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Lobster", sans-serif;
+  box-sizing: border-box;
+}
+.contact button {
+  width: 100%;
+  padding: 10px;
+  background: #e5c40c;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact button:hover {
+  background: #ffe066;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+/* Mengatur tampilan agar responsif di layar Android/mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 8px;
+  }
+  .profil-image {
+    width: 150px;
+    height: 150px;
+    max-width: 80vw;
+  }
+  .f {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    display: flex;
+  }
+  .f img {
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
+    display: flex;
+  }
+  .contact {
+    max-width: 98vw;
+    padding: 16px 8px;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+  .contact button {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+  .am {
+    padding: 0 8px;
+  }
+  .h {
+    padding: 10px;
+  }
+}
+/* ================= HERO SECTION ================= */
+/* Mengatur tampilan hero section */
+nav >ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  gap: 20px;
+  background : black ;
+  font-size: 20px;
+  
+}
+
+nav >ul>li {
+  border: 3px solid rgb(255, 255, 255);
+  padding: 5px;
+  background-color: #908fa3;
+  border-radius: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.galery {
+  background-color: darkorange;
+  padding: 200px;
+  border-radius: 50px;
+}
+
+.contactt {
+  background-color: darkblue;
+  padding: 150px;
+  border-radius: 50px;
+  margin: 5px;
+}
+
